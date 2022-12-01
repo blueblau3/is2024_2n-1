@@ -6,8 +6,8 @@
 
 ### github の使い方
 1.branch を切る<br>
-`git branch ~~`<br>
-`git checkout ~~`<br>
+`git branch 新しいブランチ名(feature/自分の名前)`<br>
+`git checkout 新しいブランチ名(feature/自分の名前)`<br>
 2.編集をする<br>
 3.`git add .`<br>
 4.`git commit -m "commit名"`<br>
@@ -18,3 +18,6 @@
 8.merge したら、毎回`git pull origin main`で自分の環境を最新版にしてください<br>
 
 以上の点、確認しました。
+
+
+
