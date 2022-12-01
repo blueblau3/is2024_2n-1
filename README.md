@@ -16,3 +16,8 @@
 7.conflict がなければ merge<br>
 ※conflict が出たとき、修正できるのであれば、修正後に merge<br>
 8.merge したら、毎回`git pull origin main`で自分の環境を最新版にしてください<br>
+
+以上の点、確認しました。
+
+
+
