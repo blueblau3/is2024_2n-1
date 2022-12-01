@@ -18,3 +18,4 @@
 8.merge したら、毎回`git pull origin main`で自分の環境を最新版にしてください<br>
 
 松本健吾確認ずみ
+branchに分けれました。by松本健吾
