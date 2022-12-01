@@ -17,8 +17,4 @@
 ※conflict が出たとき、修正できるのであれば、修正後に merge<br>
 8.merge したら、毎回`git pull origin main`で自分の環境を最新版にしてください<br>
 
-松本健吾確認ずみ
-branchに分けれました。by松本健吾
-馬場真広確認ずみ
-branchに分けれました。by馬場真広
 マージ2回目 by馬場
