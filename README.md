@@ -17,6 +17,10 @@
 ※conflict が出たとき、修正できるのであれば、修正後に merge<br>
 8.merge したら、毎回`git pull origin main`で自分の環境を最新版にしてください<br>
 
-
-
-
+### flaskサーバーの立て方
+1.https://www.curict.com/item/60/60bfe0e.html などを参考にPCにGitをインストール、python3をインストール、pip3をインストール<br>
+2.PowerShell等で任意のディレクトリに移動し、clone<br>
+3.必要に応じて仮想環境を立ち上げ(pyvenvとか？立てなくても良い)、`python3 -m pip install -r requirements.txt`を実行
+4.flaskの環境変数として`FLASK_APP=es_manager、FLASK_ENV=development`を設定(Powershellの場合は`./set_envconst`を実行すれば自動で設定される。PowerShellのスクリプトを実行できない場合は、管理者権限でPowerShellを起動し、`Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`を先に実行する。command prompt、linuxの場合は、`set_envconst`を実行すれば自動で設定される。macはわからない。) うまくいかない場合は、「Windows 環境変数」で検索して調べてみてください。<br>
+5.`flask run`でサーバーを起動<br>
+6.Google Chrome等で`localhost:5000`でアクセス<br>
