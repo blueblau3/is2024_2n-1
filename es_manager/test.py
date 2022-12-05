@@ -1,7 +1,5 @@
-#from es_manager import app
 from flask import Flask
-
-app = Flask(__name__)
+from es_manager import app
 
 @app.route('/')
 def index():
