@@ -29,3 +29,7 @@
 ### 参考URL
 githubチーム開発マニュアル：https://qiita.com/siida36/items/880d92559af9bd245c34
 gitコミット取消し方：https://qiita.com/shuntaro_tamura/items/06281261d893acf049ed
+
+### Flaskエラー対応
+`./set_envconst` でエラーが出たら以下を試してみてください。<br>
+https://1130--hq.slack.com/archives/C04A2SWKWM7/p1670216740835959?thread_ts=1670101201.082309&cid=C04A2SWKWM7
