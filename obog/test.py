@@ -1,3 +1,6 @@
 from flask import Flask
-app = Flask(__name__)
-import obog.test
+from obog import app
+
+@app.route('/')
+def index():
+    return "Hello world!!"
