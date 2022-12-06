@@ -22,7 +22,7 @@
 2.PowerShell等で任意のディレクトリに移動し、clone<br>
 3.cd is2024_2n-1で移動<br>
 4.必要に応じて仮想環境を立ち上げ(pyvenvとか？立てなくても良い)、`python3 -m pip install -r requirements.txt`を実行<br>
-5.flaskの環境変数として`FLASK_APP=es_manager`、`FLASK_ENV=development`を設定(Powershellの場合は`./set_envconst`を実行するれば自動で設定される。PowerShellのスクリプトを実行できない場合は、管理者権限でPowerShellを起動し、`Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`を先に実行する。command prompt、linuxの場合は、`set_envconst`を実行すれば自動で設定される。macはわからない。)<br>
+5.flaskの環境変数として`FLASK_APP=obog`、`FLASK_ENV=development`を設定(Powershellの場合は`./set_envconst`を実行するれば自動で設定される。PowerShellのスクリプトを実行できない場合は、管理者権限でPowerShellを起動し、`Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`を先に実行する。command prompt、linuxの場合は、`set_envconst`を実行すれば自動で設定される。macはわからない。)<br>
 6.`flask run`でサーバーを起動<br>
 7.Google Chrome等で`localhost:5000`でアクセス。Hello world!!と出力されたら完了。<br>
 
