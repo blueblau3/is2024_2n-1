@@ -1,5 +1,5 @@
 from flask import Flask
-from es_manager import app
+from obog import app
 
 @app.route('/')
 def index():
