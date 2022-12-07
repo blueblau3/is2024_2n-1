@@ -1,9 +1,79 @@
 {% extends 'base.html' %}
 
 {% block head %}
-  <title>search</title>
+    <title>search</title>
 {% endblock %}
 
 {% block body %}
-  <h1>コーチ検索</h1>
+    <h1>コーチ検索</h1>
+    
+    <form method="post" action="{{ url_for('search')}}">
+        <table>
+
+            {% for column_info in column_infos %}
+              <tr>
+                  <th class= ""{{column_info[0]}}""><label>{{column_info[2]}}</label></th>
+                  <td><select name= "{{column_info[1]}}" id="{{column_info[1]}}">
+                    <option>{{column_info[3]}}</option>
+                    {% for value in entry_sheets[column_info[0]] %}
+                      <option>{{ value }}</option>
+                    {%- endfor %}
+                    </select>
+                  </td>
+              </tr>
+            {%- endfor %}
+    
+            <tr>
+                  <th class= "and_or"><label>検索条件</label></th>
+                  <td><select name= "and_or_select" id="and_or_select">
+                    {% if th == "OR"%}
+                      <option>OR</option>
+                      <option>AND</option>
+                    {% else %}
+                      <option>AND</option>
+                      <option>OR</option>
+                    {% endif %}
+                    </select>
+                  </td>
+              </tr>
+        </table>
+        <input type="submit" value="検索">
+    </form>
+    
+    <h2>検索結果</h2>
+    {% if results != []%}
+  <table border="1" class="results">
+    <thead>
+      <tr>
+        <th>ES概要</th>
+        <th>企業名</th>
+        <th>選考種別</th>
+        <th>選考状況</th>
+        <th>質問</th>
+        <th>詳細</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for result in results %}
+        <tr>
+          <td>{{ result.abstract}}</td>
+          <td>{{ result.company_name }}</td>
+          <td>{{ result.selection_kind }}</td>
+          {% if result.acceptance_status != None %}
+            <td>{{ result.acceptance_status }}</td>
+          {% else %}
+            <td>なし</td>
+          {% endif %}
+          <td>{{ result.question_genre_1}}</td>
+          <td><a class=button href= "/detail/{{result.id}}")>詳細</a></td>
+        </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>条件に合致する結果はありません</p>
+
+    
+
+  {% endif %}
 {% endblock %}
