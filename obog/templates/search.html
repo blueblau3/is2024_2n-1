@@ -6,6 +6,13 @@
 
 {% block body %}
 <h1>コーチ一覧</h1>
+<form action = "{{url_for('search_detail')}}" method = "POST" class="form-inline">
+  <input name = "Prefecture" placeholder="出身地">
+  <input name = "JHschool" placeholder="出身中学">
+  <input name = "Hschool" placeholder="出身高等学校">
+  <input name = "Teach" placeholder="指導可能な分野">
+  <input type ="submit" value = "検索">
+</form>
   <table border="1" class="table-light">
     <thead>
       <tr>
