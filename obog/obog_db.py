@@ -30,4 +30,4 @@ def create_obogs_table():
     con.close()
 
 #DB起動テスト用
-create_obogs_table()
+#create_obogs_table()
