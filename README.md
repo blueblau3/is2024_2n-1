@@ -35,7 +35,7 @@ gitコミット取消し方：https://qiita.com/shuntaro_tamura/items/06281261d8
 https://1130--hq.slack.com/archives/C04A2SWKWM7/p1670216740835959?thread_ts=1670101201.082309&cid=C04A2SWKWM7
 
 ### sqlite3中身の確認方法(コマンドライン)
-1.cd obogで移動
-2.以下の参考サイトを踏まえて中身の確認が可能。
-参考URL：https://qiita.com/baraobara/items/027a4bcbad1c4c68798d
+1.cd obogで移動<br>
+2.以下の参考サイトを踏まえて中身の確認が可能。<br>
+参考URL：https://qiita.com/baraobara/items/027a4bcbad1c4c68798d<br>
 DBのパス：obogs.db、テーブル名：obogs
