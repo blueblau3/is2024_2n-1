@@ -71,7 +71,7 @@ def new():
   return redirect('/')
 
 #投稿一覧ページ(OB・OG一覧)
-@app.route('/search')
+@app.route('/search/')
 def search():
   con = sqlite3.connect(DATABASE)
   records = con.execute("SELECT * FROM obogs").fetchall()
