@@ -1,6 +1,6 @@
 import sqlite3
 
-DATABASE = 'obogs.db'
+DATABASE = 'obog/obogs.db'
 
 #obogsテーブルの作成
 def create_obogs_table():

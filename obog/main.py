@@ -43,7 +43,7 @@ def new():
       pr=request.form['pr'],
     )
 
-  elif len(request.form['pr']) => 250 or len(request.form['pr']) <= 10:
+  elif len(request.form['pr']) >= 250 or len(request.form['pr']) <= 10:
     flash("文字数が" + str(len(request.form['pr'])) + "です")
     return render_template(
       'register_form.html',
@@ -73,6 +73,28 @@ def new():
 #投稿一覧ページ(OB・OG一覧)
 @app.route('/search')
 def search():
+  con = sqlite3.connect(DATABASE)
+  records = con.execute("SELECT * FROM obogs").fetchall()
+  con.close()
+  results = get_database_dict(records)
   return render_template(
-    'search.html'
+    'search.html',
+    results = results
   )
+
+def get_database_dict(records):
+  results = []
+  for record in records:
+    results.append(
+      {
+      "id": record[0],
+      "name": record[1],
+      "email": record[2],
+      "prefecture": record[3],
+      "juniorhighschoolname": record[4],
+      "highschoolname": record[5],
+      "teaching_area": record[6],
+      "pr": record[7]
+      }
+      )
+  return results
