@@ -19,4 +19,12 @@ def create_obogs_table():
     )")
     #テーブルにコミット
     con.commit()
+
+    #DB起動テスト用
+    con.execute("INSERT INTO obogs \
+    (name, email, prefecture, juniorhighschoolname, highschoolname, teaching_area, pr) \
+    values (?,?,?,?,?,?)",["kengo","aaa@gmail.com","hyogo","shiomi","kobe","badminton,tabletennis","This record is test."]
+    )
+    #テーブルにコミット
+    con.commit()
     con.close()
