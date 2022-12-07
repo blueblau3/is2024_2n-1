@@ -6,7 +6,7 @@
 
 {% block body %}
 <h1>コーチ一覧</h1>
-  <table border="1" class="results">
+  <table border="1" class="table-light">
     <thead>
       <tr>
         <th>氏名</th>
@@ -22,7 +22,7 @@
       {% for result in results %}
         <tr>
           <td>{{ result.name}}</td>
-          <td><a href="mailto:{{ result.email }}"">{{ result.email }}</a></td>
+          <td><a href="mailto:{{ result.email }}">{{ result.email }}</a></td>
           <td>{{ result.prefecture }}</td>
           <td>{{ result.juniorhighschoolname}}</td>
           <td>{{ result.highschoolname}}</td>
