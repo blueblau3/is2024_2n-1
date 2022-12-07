@@ -1,0 +1,22 @@
+import sqlite3
+
+DATABASE = 'obog.db'
+
+#obogsテーブルの作成
+def create_obogs_table():
+    #databaseに接続(file名がなければそのファイルを作成する。)
+    con = sqlite3.connect(DATABASE)
+    #テーブル作成(カラムは8つ。slack参照。)
+    con.execute("create table if not exists obogs \
+    (id integer primary key autoincrement, \
+    name text not null, \
+    email text not null, \
+    prefecture text not null, \
+    juniorhighschoolname text not null, \
+    highschoolname text not null, \
+    teaching_area text not null, \
+    pr text not pull \
+    )")
+    #テーブルにコミット
+    con.commit()
+    con.close()
