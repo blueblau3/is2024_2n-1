@@ -32,19 +32,31 @@ def new():
   # validation
   if request.form['name'] is None or request.form['email'] is None or request.form['prefecture'] is None or request.form['juniorhighschoolname'] is None or request.form['highschoolname'] is None or request.form['teaching_area'] is None or request.form['pr'] is None:
     flash("未入力の箇所があります")
-    if len(request.form['pr']) > 250 and len(request.form['pr']) <= 50:
-      flash("文字数が" + str(len(request.form['pr'])) + "です")
-    else:
-      return render_template(
-        'register_form.html',
-        name=request.form['name'],
-        email=request.form['email'],
-        prefecture=request.form['prefecture'],
-        juniorhighschoolname=request.form['juniorhighschoolname'],
-        highschoolname=request.form['highschoolname'],
-        teaching_area=request.form['teaching_area'],
-        pr=request.form['pr'],
-      )
+    return render_template(
+      'register_form.html',
+      name=request.form['name'],
+      email=request.form['email'],
+      prefecture=request.form['prefecture'],
+      juniorhighschoolname=request.form['juniorhighschoolname'],
+      highschoolname=request.form['highschoolname'],
+      teaching_area=request.form['teaching_area'],
+      pr=request.form['pr'],
+    )
+
+  elif len(request.form['pr']) => 250 or len(request.form['pr']) <= 10:
+    flash("文字数が" + str(len(request.form['pr'])) + "です")
+    return render_template(
+      'register_form.html',
+      name=request.form['name'],
+      email=request.form['email'],
+      prefecture=request.form['prefecture'],
+      juniorhighschoolname=request.form['juniorhighschoolname'],
+      highschoolname=request.form['highschoolname'],
+      teaching_area=request.form['teaching_area'],
+      pr=request.form['pr'],
+    )
+
+
   else:
     # registration to db
     con = sqlite3.connect(DATABASE)
