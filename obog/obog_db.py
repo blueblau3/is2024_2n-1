@@ -1,6 +1,6 @@
 import sqlite3
 
-DATABASE = 'obog.db'
+DATABASE = 'obogs.db'
 
 #obogsテーブルの作成
 def create_obogs_table():
@@ -21,13 +21,13 @@ def create_obogs_table():
     con.commit()
 
     #DB起動テスト用
-    # con.execute("INSERT INTO obogs \
-    # (name, email, prefecture, juniorhighschoolname, highschoolname, teaching_area, pr) \
-    # values (?,?,?,?,?,?,?)",["kengo","aaa@gmail.com","hyogo","shiomi","kobe","badminton,tabletennis","This record is test."]
-    # )
-    # con.commit()
+    con.execute("INSERT INTO obogs \
+    (name, email, prefecture, juniorhighschoolname, highschoolname, teaching_area, pr) \
+    values (?,?,?,?,?,?,?)",["kengo","aaa@gmail.com","hyogo","shiomi","kobe","badminton,tabletennis","This record is test."]
+    )
+    con.commit()
     #接続解除
     con.close()
 
 #DB起動テスト用
-# create_obogs_table()
+create_obogs_table()
