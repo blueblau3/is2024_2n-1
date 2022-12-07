@@ -8,12 +8,6 @@
     <table border="1">
       <tr>
       <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">ID</label>
-        <input type="integer" name="id" value="{{id}}" class="form-control" id="exampleFormControlInput1" required>
-      </div>
-      </tr>
-      <tr>
-      <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">氏名</label>
         <input type="text" name="name" value="{{name}}" class="form-control" id="exampleFormControlInput1" required>
       </div>
@@ -21,9 +15,15 @@
       <tr>
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">メールアドレス</label>
-          <input type="text" name="email" value="{{email}}" class="form-control" id="exampleFormControlInput1" required>
+          <input type="email" name="email" value="{{email}}" class="form-control" id="exampleFormControlInput1" required>
         </div>
       </tr>
+      <tr>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">出身地</label>
+          <input type="integer" name="prefecture" value="{{prefecture}}" class="form-control" id="exampleFormControlInput1" required>
+        </div>
+        </tr>
       <tr>
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">出身中学</label>
@@ -45,7 +45,7 @@
       <tr>
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">自己PR</label>
-          <input type="text" name="pr" value="{{pr}}" class="form-control" id="exampleFormControlInput1" required>
+          <input type="text" name="pr" value="{{pr}}" class="form-control" id="exampleFormControlInput1" style="height:100px;" required>
         </div>
       </tr>
     </table>
