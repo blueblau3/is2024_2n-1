@@ -56,6 +56,7 @@ def new():
       pr=request.form['pr'],
     )
 
+
   else:
     # registration to db
     con = sqlite3.connect(DATABASE)
