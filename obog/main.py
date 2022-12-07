@@ -98,3 +98,21 @@ def get_database_dict(records):
       }
       )
   return results
+
+@app.route("/search_result",methods = ["POST"])
+def search_detail():
+
+  con = sqlite3.connect(DATABASE)
+  search_prefecture  = "%"+request.form["Prefecture"]+"%"
+  search_jhschool  = "%"+request.form["JHschool"]+"%"
+  search_hschool  = "%"+request.form["Hschool"]+"%"
+  search_teach  = "%"+request.form["Teach"]+"%"
+  records = con.execute("SELECT * FROM obogs where prefecture like ? and juniorhighschoolname like ? and highschoolname like ? and teaching_area like ?",(search_prefecture,search_jhschool,search_hschool,search_teach,)).fetchall()
+  con.close()
+  results = get_database_dict(records)
+  
+  if results ==[]:
+    print("該当なし")
+    return redirect(url_for("search"))
+  else:
+    return render_template("search.html",results = results)
