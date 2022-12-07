@@ -1,22 +1,17 @@
 from tkinter import FIRST
 from cmath import nan
 from obog import app
-from flask import top_page, index_page, render_template, request, redirect, url_for, flash, session
+from flask import render_template, request, redirect, url_for, flash, session
 import sqlite3
 import re
 from datetime import datetime
 
 DATABASE = 'obog.db'
 
-@app.route('/')
-def top():
-    return top_page(
-        'top.html'
-    )
 
 @app.route('/')
 def index():
-    return index_page(
+    return render_template(
         'index.html'
     )
 
