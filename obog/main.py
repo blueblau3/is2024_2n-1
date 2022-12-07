@@ -6,12 +6,11 @@ import sqlite3
 import re
 from datetime import datetime
 
-DATABASE = 'obog.db'
-
+DATABASE = 'obogs.db'
 
 @app.route('/')
 def index():
-    return render_template(
+    return index_page(
         'index.html'
     )
 
@@ -28,13 +27,6 @@ def is_int(s):
     except ValueError:
         return False
 
-def is_str(s):
-    try:
-        int(s)
-        return True
-    except ValueError:
-        return False
-
 @app.route('/new', methods=['POST'])
 def new():
   # validation
@@ -42,14 +34,13 @@ def new():
     flash("文字数には半角で自然数を入力してください")
     return render_template(
       'register_form.html',
-      company_name=request.form['company_name'],
-      selection_kind=request.form['selection_kind'],
-      question_genre_1=request.form['question_genre_1'],
-      submitted_at=request.form['submitted_at'],
-      word_count=request.form['word_count'],
-      acceptance_status=request.form['acceptance_status'],
-      abstract=request.form['abstract'],
-      content=request.form['contents']
+      name=request.form['name'],
+      email=request.form['email'],
+      prefecture=request.form['prefecture'],
+      juniorhighschoolname=request.form['juniorhighschoolname'],
+      highschoolname=request.form['highschoolname'],
+      teaching_area=request.form['teaching_area'],
+      pr=request.form['pr'],
     )
   else:
 
@@ -57,20 +48,19 @@ def new():
         flash("文字数には半角で自然数を入力してください")
         return render_template(
           'register_form.html',
-          company_name=request.form['company_name'],
-          selection_kind=request.form['selection_kind'],
-          question_genre_1=request.form['question_genre_1'],
-          submitted_at=request.form['submitted_at'],
-          word_count=request.form['word_count'],
-          acceptance_status=request.form['acceptance_status'],
-          abstract=request.form['abstract'],
-          content=request.form['contents']
+          ID=request.form['ID'],
+          name=request.form['name'],
+          email=request.form['email'],
+          prefecture=request.form['prefecture'],
+          juniorhighschoolname=request.form['juniorhighschoolname'],
+          highschoolname=request.form['highschoolname'],
+          teaching_area=request.form['pr'],
         )
 
       # registration to db
       con = sqlite3.connect(DATABASE)
-      con.execute('insert into entry_sheets (company_name, selection_kind, question_genre_1, word_count, updated_at, submitted_at,acceptance_status, abstract, content) values (?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                  [request.form['company_name'], request.form['selection_kind'], request.form['question_genre_1'],request.form['word_count'], str(datetime.now())[:19], request.form['submitted_at'], request.form['acceptance_status'],request.form['abstract'], request.form['contents']])
+      con.execute('insert into obogs (name, email, prefecture, juniorhighschoolname, highschoolname, teaching_are, pr) values (?, ?, ?, ?, ?, ?, ?)',
+                  [request.form['name'], request.form['email'], request.form['prefecture'],request.form['juniorhighschoolname'], request.form['highschoolname'], request.form['teaching_are'],request.form['pr']])
       con.commit()
       con.close()
       flash("追加しました")
