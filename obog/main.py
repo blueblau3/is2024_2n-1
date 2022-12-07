@@ -10,7 +10,7 @@ DATABASE = 'obogs.db'
 
 @app.route('/')
 def index():
-    return index_page(
+    return render_template(
         'index.html'
     )
 
