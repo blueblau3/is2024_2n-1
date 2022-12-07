@@ -6,7 +6,7 @@ import sqlite3
 import re
 from datetime import datetime
 
-DATABASE = 'obogs.db'
+DATABASE = 'obog/obogs.db'
 
 @app.route('/')
 def index():
@@ -45,9 +45,11 @@ def new():
   else:
     # registration to db
     con = sqlite3.connect(DATABASE)
-    con.execute('insert into obogs (name, email, prefecture, juniorhighschoolname, highschoolname, teaching_area, pr) values (?, ?, ?, ?, ?, ?, ?)',
+    cur = con.cursor()
+    cur.execute('insert into obogs (name, email, prefecture, juniorhighschoolname, highschoolname, teaching_area, pr) values (?, ?, ?, ?, ?, ?, ?)',
                 [request.form['name'], request.form['email'], request.form['prefecture'],request.form['juniorhighschoolname'], request.form['highschoolname'], request.form['teaching_area'],request.form['pr']])
     con.commit()
+    cur.close()
     con.close()
     flash("追加しました")
 
