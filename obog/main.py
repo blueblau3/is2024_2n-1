@@ -30,7 +30,7 @@ def is_int(s):
 @app.route('/new', methods=['POST'])
 def new():
   # validation
-  if request.form['name'] is None or request.form['email'] is None or request.form['prefecture'] is None or request.form['juniorhighschoolname'] is None or request.form['highschoolname'] is None or request.form['teaching_are'] is None or request.form['pr'] is None:
+  if request.form['name'] is None or request.form['email'] is None or request.form['prefecture'] is None or request.form['juniorhighschoolname'] is None or request.form['highschoolname'] is None or request.form['teaching_area'] is None or request.form['pr'] is None:
     flash("未入力の箇所があります")
     return render_template(
       'register_form.html',
@@ -43,15 +43,15 @@ def new():
       pr=request.form['pr'],
     )
   else:
-      # registration to db
-      con = sqlite3.connect(DATABASE)
-      con.execute('insert into obogs (name, email, prefecture, juniorhighschoolname, highschoolname, teaching_are, pr) values (?, ?, ?, ?, ?, ?, ?)',
-                  [request.form['name'], request.form['email'], request.form['prefecture'],request.form['juniorhighschoolname'], request.form['highschoolname'], request.form['teaching_are'],request.form['pr']])
-      con.commit()
-      con.close()
-      flash("追加しました")
+    # registration to db
+    con = sqlite3.connect(DATABASE)
+    con.execute('insert into obogs (name, email, prefecture, juniorhighschoolname, highschoolname, teaching_area, pr) values (?, ?, ?, ?, ?, ?, ?)',
+                [request.form['name'], request.form['email'], request.form['prefecture'],request.form['juniorhighschoolname'], request.form['highschoolname'], request.form['teaching_area'],request.form['pr']])
+    con.commit()
+    con.close()
+    flash("追加しました")
 
-  return redirect(url_for('index'))
+  return redirect('/')
 
 #投稿一覧ページ(OB・OG一覧)
 @app.route('/search')
