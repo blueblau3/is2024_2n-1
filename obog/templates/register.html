@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block head %}
+  <title>register</title>
+{% endblock %}
+{% block body %}
+  <h2>新規登録</h2>
+  <form method="post" action="{{ url_for('new') }}">
+    <table border="1">
+      <tr>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">ID</label>
+        <input type="integer" name="id" value="{{id}}" class="form-control" id="exampleFormControlInput1" required>
+      </div>
+      </tr>
+      <tr>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">氏名</label>
+        <input type="text" name="name" value="{{name}}" class="form-control" id="exampleFormControlInput1" required>
+      </div>
+      </tr>
+      <tr>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">メールアドレス</label>
+          <input type="text" name="email" value="{{email}}" class="form-control" id="exampleFormControlInput1" required>
+        </div>
+      </tr>
+      <tr>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">出身中学</label>
+          <input type="text" name="juniorhighschoolname" value="{{juniorhighschoolname}}" class="form-control" id="exampleFormControlInput1" required>
+        </div>
+      </tr>
+      <tr>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">出身高等学校</label>
+          <input type="text" name="highschoolname" value="{{highschoolname}}" class="form-control" id="exampleFormControlInput1" required>
+        </div>
+      </tr>
+      <tr>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">指導可能な分野</label>
+          <input type="text" name="teaching_area" value="{{teaching_area}}" class="form-control" id="exampleFormControlInput1" required>
+        </div>
+      </tr>
+      <tr>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">自己PR</label>
+          <input type="text" name="pr" value="{{pr}}" class="form-control" id="exampleFormControlInput1" required>
+        </div>
+      </tr>
+    </table>
+    <br>
+    <input type="submit" value="新規登録">
+  </form>
+{% endblock %}
