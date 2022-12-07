@@ -2,7 +2,23 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
  }
+ 
+ img.card-img-top{
+    object-fit: contain;
+}
 
+h1.title-name{
+    text-align: center;
+    font-size : 60px ;
+    font-family: '游ゴシック Medium', sans-serif;
+}
+
+h1.title-name{
+    padding: 1rem 1rem;
+    background: #ff980080;
+    color: rgb(124, 135, 226);
+    border-radius: 3px;
+}
  .card-group{
     margin: 0 auto;
  }
