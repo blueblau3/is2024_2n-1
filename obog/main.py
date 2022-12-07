@@ -1,17 +1,22 @@
 from tkinter import FIRST
 from cmath import nan
-from es_manager import app
-from flask import render_template, request, redirect, url_for, flash, session
+from obog import app
+from flask import top_page, index_page, render_template, request, redirect, url_for, flash, session
 import sqlite3
 import re
 from datetime import datetime
 
-DATABASE = 'es_manager.db'
+DATABASE = 'obog.db'
 
+@app.route('/')
+def top():
+    return top_page(
+        'top.html'
+    )
 
 @app.route('/')
 def index():
-    return render_template(
+    return index_page(
         'index.html'
     )
 
@@ -22,6 +27,13 @@ def form():
   )
 
 def is_int(s):
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False
+
+def is_str(s):
     try:
         int(s)
         return True
