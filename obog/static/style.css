@@ -22,7 +22,9 @@ h1.title-name{
  .card-group{
     margin: 0 auto;
  }
-
+.card{
+    opacity: 0.8;
+}
  .form-control{
     width: 500px;
  }
