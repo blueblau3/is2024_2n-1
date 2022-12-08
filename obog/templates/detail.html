@@ -6,7 +6,7 @@
 {% block body %}
     <h2 class="title">OBOG情報詳細表示</h2>
     <div>
-        <table border="1">
+        <table class>
             {% for value in results %}
             <tr>
                 <th>氏名</th>
@@ -14,7 +14,7 @@
             </tr>
             <tr>
                 <th>メールアドレス</th>
-                <td>{{ value.email }}</td>
+                <td><a href="mailto:{{value.email}}">{{value.email}}</a></td>
             </tr>
             <tr>
                 <th>出身都道府県</th>
