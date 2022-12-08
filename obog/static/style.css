@@ -79,3 +79,18 @@ input[type="submit"]:hover {
     border: 1px solid black;
     width: 20em;
 }
+
+.title{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: '游ゴシック Medium', sans-serif;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0.5em 1em;
+    color: #474747;
+    background: whitesmoke;/*背景色*/
+    border-left: double 7px #4ec4d3;/*左線*/
+    border-right: double 7px #4ec4d3;/*右線*/
+}
