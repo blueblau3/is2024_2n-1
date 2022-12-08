@@ -69,3 +69,13 @@ input[type="submit"]:hover {
     cursor: pointer;
     transition: background-color 1s;
 }
+
+.input-group-text{
+    border: 1px solid black;
+    width: 10em;
+}
+
+.form-control2{
+    border: 1px solid black;
+    width: 20em;
+}
