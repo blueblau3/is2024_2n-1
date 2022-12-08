@@ -5,8 +5,7 @@
 
 {% block body %}
     <h2 class="title">OBOG情報詳細表示</h2>
-    <div>
-        <table class>
+        <table class="box14">
             {% for value in results %}
             <tr>
                 <th>氏名</th>
@@ -25,7 +24,7 @@
                 <td>{{ value.juniorhighschoolname }}</td>
             </tr>
             <tr>
-                <th>出身高校</th>
+                <th>出身高等学校</th>
                 <td>{{ value.highschoolname }}</td>
             </tr>
             <tr>
