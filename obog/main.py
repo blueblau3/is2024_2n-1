@@ -82,6 +82,19 @@ def search():
     results = results
   )
 
+# 詳細ページ
+@app.route('/detail/<int:id>')
+def detail(id):
+  con = sqlite3.connect(DATABASE)
+  records = con.execute("SELECT * FROM obogs where id = ?", [id]).fetchall()
+  con.commit()
+  con.close()
+  results = get_database_dict(records)
+  return render_template(
+    'detail.html',
+    results = results,
+    )
+
 def get_database_dict(records):
   results = []
   for record in records:
