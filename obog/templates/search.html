@@ -16,25 +16,21 @@
   <table border="1" class="table-light">
     <thead>
       <tr>
-        <th>氏名</th>
-        <th>メールアドレス</th>
         <th>出身地</th>
         <th>出身中学</th>
         <th>出身高等学校</th>
         <th>指導可能な分野</th>
-        <th>自己PR</th>
+        <th>詳細リンク</th>
       </tr>
     </thead>
     <tbody>
       {% for result in results %}
         <tr>
-          <td>{{ result.name}}</td>
-          <td><a href="mailto:{{ result.email }}">{{ result.email }}</a></td>
           <td>{{ result.prefecture }}</td>
           <td>{{ result.juniorhighschoolname}}</td>
           <td>{{ result.highschoolname}}</td>
           <td>{{ result.teaching_area}}</td>
-          <td>{{ result.pr}}</td>
+          <td><a href="/detail/{{ result.id }}">詳細へ</a></td>
         </tr>
       {%- endfor %}
     </tbody>
