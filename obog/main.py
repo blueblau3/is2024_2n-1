@@ -66,7 +66,7 @@ def new():
     con.commit()
     cur.close()
     con.close()
-    flash("追加しました")
+    flash("登録が完了しました。ありがとうございます。")
 
   return redirect('/')
 
@@ -125,7 +125,8 @@ def search_detail():
   results = get_database_dict(records)
   
   if results ==[]:
-    print("該当なし")
-    return redirect(url_for("search"))
+    flash("検索条件に該当する方は見つかりませんでした")
+    return redirect('search/')
+    
   else:
     return render_template("search.html",results = results)
