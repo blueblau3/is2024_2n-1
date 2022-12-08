@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>detail</title>
+{% endblock %}
+
+{% block body %}
+    <h2>OBOG情報詳細表示</h2>
+    <div>
+        <table border="1">
+            <tr>
+                <th>氏名</th>
+                <td>{{ results.name }}</td>
+            </tr>
+            <tr>
+                <th>メールアドレス</th>
+                <td>{{ results.email }}</td>
+            </tr>
+            <tr>
+                <th>出身都道府県</th>
+                <td>{{ results.prefecture }}</td>
+            </tr>
+            <tr>
+                <th>出身中学校</th>
+                <td>{{ results.juniorhighschoolname }}</td>
+            </tr>
+            <tr>
+                <th>出身高校</th>
+                <td>{{ results.highschoolname }}</td>
+            </tr>
+            <tr>
+                <th>指導可能な分野</th>
+                <td>{{ results.teaching_area }}</td>
+            </tr>
+            <tr>
+                <th>自己PR文</th>
+                <td>{{ results.pr }}</td>
+            </tr>
+        </table>
+{% endblock %}
